@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+    <title>My page</title>
+</head>
+
+<body>
+    <div id="scroll-container">
+        <p id="scroll-text">lolol</p>
+    </div>
+    <div id="scroll-container">
+        <p id="scroll-text">qsdfqsdf</p>
+    </div>
+    <style>
+        p {
+            font-size: 100px;
+        }
+
+        body {
+            background-color: rgba(255, 0, 255, 1);
+        }
+
+        #scroll-container {
+            border: 3px solid black;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        #scroll-text {
+            /* animation properties */
+            -moz-transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+
+            -moz-animation: my-animation 15s linear infinite;
+            -webkit-animation: my-animation 15s linear infinite;
+            animation: my-animation 15s linear infinite;
+        }
+
+        /* for Firefox */
+        @-moz-keyframes my-animation {
+            from {
+                -moz-transform: translateX(100%);
+            }
+
+            to {
+                -moz-transform: translateX(-100%);
+            }
+        }
+
+        /* for Chrome */
+        @-webkit-keyframes my-animation {
+            from {
+                -webkit-transform: translateX(100%);
+            }
+
+            to {
+                -webkit-transform: translateX(-100%);
+            }
+        }
+
+        @keyframes my-animation {
+            from {
+                -moz-transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+
+            to {
+                -moz-transform: translateX(-100%);
+                -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+    <script>
+        const url = "ws://localhost:7071/";
+        const mywsServer = new WebSocket(url);
+        mywsServer.onmessage = function (event) {
+            console.log("msg");
+            const { data } = event;
+            if (data === "reload") {
+                location.reload();
+            }
+        };
+    </script>
+</body>
