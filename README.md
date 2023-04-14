@@ -16,8 +16,8 @@ Then you can edit the page, when you have finish, just hit `[Enter]` to reload
 
 > This project is just a POC, I don't think I will updated it
 
-- create a system to design the page on a new URL like `/studio` (with a button "update")
-- try to have only one server for websocket and webserver
+- [ ] create a system to design the page on a new URL like `/studio` (with a button "update")
+- [x] try to have only one server for websocket and webserver
 
 ## Infos
 
