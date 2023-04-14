@@ -74,11 +74,8 @@
         }
     </style>
     <script>
-        const url = "ws://localhost:7071/";
-        const mywsServer = new WebSocket(url);
-        mywsServer.onmessage = function (event) {
-            console.log("msg");
-            const { data } = event;
+        const wsServer = new WebSocket(`ws://${location.host}`);
+        wsServer.onmessage = ({ data }) => {
             if (data === "reload") {
                 location.reload();
             }
