@@ -40,7 +40,7 @@
                 helper = !helper;
             }}>Remove Helper</button
         >
-        <a href="/view.html" target="_blank">Open the view</a>
+        <a href="./view.html" target="_blank">Open the view</a>
     </div>
 </MovableBox>
 

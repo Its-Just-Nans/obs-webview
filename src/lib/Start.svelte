@@ -4,7 +4,7 @@
 
 <main>
     <div>
-        <a href="/view.html">Go to /view</a>
+        <a href="./view.html">Go to /view</a>
         <br />
         <br />
         <br />
